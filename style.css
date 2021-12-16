@@ -1,0 +1,147 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.inner {
+    width: 100%;
+    font-family: 'Roboto', sans-serif;
+}
+
+.task-manager {
+    width: 336px;
+    margin: 30px auto 50px;
+    border: 1px solid #C4C4C4;
+    border-radius: 10px;
+    box-sizing: border-box;
+
+}
+
+header {
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    background: #FFDC40;
+    height: 28px;
+    width: 100%;
+}
+
+.title {
+    margin-top: 13px;
+    margin-bottom: 16px;
+    font-weight: 900;
+    font-size: 26px;
+    line-height: 30px;
+    text-align: center;
+    text-transform: capitalize;
+}
+
+.sort {
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 30px;
+    margin-bottom: 11px;
+}
+
+.a-b {
+    display: block;
+}
+.b-a {
+    display: none;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.insertField {
+    display: flex;
+    width: 286px;
+    height: 40px;
+    box-sizing: border-box;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 27px;
+}
+
+.task__inner {
+    width: 286px;
+    border: 1px solid #C4C4C4;
+    box-sizing: border-box;
+    border-radius: 10px;
+}
+
+.input {
+    border: none;
+    outline: none;
+}
+
+.delete {
+    width: 20px;
+    height: 20px;
+}
+.delete svg {
+    transition: all .6s linear;
+}
+
+.add-button {
+    width: 150px;
+    height: 42px;
+    margin-bottom: 19px;
+    display: flex;
+    position: relative;
+    background: #833AE0;
+    color: white;
+    border-radius: 71px;
+    border: none;
+    align-items: center;
+    justify-content: center;
+    transition: all .3s linear;
+    margin-top: 18px;
+}
+
+.add-button:hover {
+    background: #9953F1;
+}
+
+.add-button:hover .plus{
+    background: #AA68FE;
+}
+
+.plus {
+    width: 42px;
+    height: 42px;
+    background: #9953F1;
+    border-radius: 71px;
+    display: flex;
+    position: absolute;
+    top: 0;
+    left: 0;
+    justify-content: center;
+    align-items: center;
+    transition: all .3s linear;
+}
+
+.add-text {
+    padding-left: 15px;
+}
+
+.sort:hover .lol {
+    fill: black;
+    transition: all .6s linear;
+}
+.delete .x, .delete path, .delete rect {
+    transition: all .3s linear;
+}
+.delete:hover .x {
+    fill: #833AE0;
+}
+.delete:hover path {
+    stroke: white;
+}
+.delete:hover rect {
+    stroke: none;
+}

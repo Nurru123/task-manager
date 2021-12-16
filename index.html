@@ -4,10 +4,55 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>To-do list</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="./images/favicon.svg" type="image/svg">
 </head>
 <body>
+    <div class="inner">
+        <div class="task-manager">
+            <header></header>
+            <main>
+                <p class="title">To-Do List</p>
+                <div class="sort">
+                    <svg class="a-b" width="25" height="15" viewBox="0 0 25 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect class="lol" x="2.5" width="2.5" height="12.5" fill="#C4C4C4"/>
+                        <rect class="lol" x="10" y="3.75" width="2.5" height="7.5" transform="rotate(-90 10 3.75)" fill="#C4C4C4"/>
+                        <rect class="lol" x="10" y="8.75" width="2.5" height="10" transform="rotate(-90 10 8.75)" fill="#C4C4C4"/>
+                        <rect class="lol" x="10" y="13.75" width="2.5" height="15" transform="rotate(-90 10 13.75)" fill="#C4C4C4"/>
+                        <path class="lol" d="M3.75 15L0.502405 10.3125L6.9976 10.3125L3.75 15Z" fill="#C4C4C4"/>
+                    </svg>
+                    <svg class="b-a" width="25" height="15" viewBox="0 0 25 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect class="lol" x="5" y="15" width="2.5" height="12.5" transform="rotate(-180 5 15)" fill="#C4C4C4"/>
+                        <rect class="lol" x="10" y="3.75" width="2.5" height="7.5" transform="rotate(-90 10 3.75)" fill="#C4C4C4"/>
+                        <rect class="lol" x="10" y="8.75" width="2.5" height="10" transform="rotate(-90 10 8.75)" fill="#C4C4C4"/>
+                        <rect class="lol" x="10" y="13.75" width="2.5" height="15" transform="rotate(-90 10 13.75)" fill="#C4C4C4"/>
+                        <path class="lol" d="M3.75 6.55671e-07L6.99759 4.6875L0.502404 4.6875L3.75 6.55671e-07Z" fill="#C4C4C4"/>
+                    </svg>
+                </div>
+                <form class="form">
+                    <div class="task__inner">
+                        <div class="insertField" id="input1">
+                            <input class="input" type="text" name="input1">
+                            <div class="delete">
+                                <svg class="x" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <rect x="0.5" y="0.5" width="19" height="19" rx="9.5" stroke="#C4C4C4"/>
+                                    <path d="M6 6L14 14" stroke="#C4C4C4"/>
+                                    <path d="M6 14L14 6" stroke="#C4C4C4"/>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <button class="add-button" name="addButton">
+                        <div class="plus">+</div>
+                        <p class="add-text">Добавить</p>
+                    </button>
+                </form>
+            </main>
+        </div>
+
+    </div>
     <script src="/script.js"></script>
 </body>
 </html>
