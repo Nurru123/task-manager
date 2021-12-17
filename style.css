@@ -20,8 +20,8 @@
 }
 
 header {
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
+    border-top-left-radius: 9px;
+    border-top-right-radius: 9px;
     background: #FFDC40;
     height: 28px;
     width: 100%;
@@ -40,7 +40,7 @@ header {
 .sort {
     display: flex;
     justify-content: flex-end;
-    padding-right: 30px;
+    margin-right: 30px;
     margin-bottom: 11px;
 }
 
