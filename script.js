@@ -42,6 +42,8 @@ class Lol {
                     this.refreshInputs();
                 }
             })
+        } else {
+            document.querySelector('.input').value = '';
         }
     }
 }
