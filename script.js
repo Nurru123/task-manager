@@ -13,16 +13,15 @@ class Lol {
     createNewInput() {
         const div = document.createElement('div');
         div.classList.add('insertField');
-        div.id = `input${this.inputs.length + 1}`;
+        div.id = `input${counter}`;
         const input = document.createElement('input');
         input.classList.add('input');
         input.setAttribute('type', 'text');
-        input.setAttribute('name', `input${this.inputs.length + 1}`);
+        input.setAttribute('name', `input${counter}`);
 
         const deleteDiv = document.createElement('div');
         deleteDiv.classList.add('delete');
         deleteDiv.innerHTML = svg;
-
 
         div.append(input);
         div.append(deleteDiv);
@@ -37,7 +36,7 @@ class Lol {
     deleteItem(id) {
         if (this.inputs.length > 1) {
             this.inputs.forEach(item => {
-                if (id === item.id) {
+                if (id === item.firstChild.name) {
                     item.remove();
                     this.refreshInputs();
                 }
@@ -58,15 +57,16 @@ function addDelete() {
         })
     })
 }
+
 addDelete();
+let counter = 1;
 document.querySelector('.add-button').addEventListener('click', function (e) {
     e.preventDefault();
+    const inputs = document.querySelectorAll('.input');
     
-    const inputs = document.querySelectorAll('.input')
-    inputs.forEach(item => {
-        if (item.value !== '') {
-            lel.createNewInput();
-            addDelete();
-        }
-    }) 
+    if (inputs[inputs.length-1].value !== '') {
+        ++counter;
+        lel.createNewInput();
+        addDelete();
+    }
 })

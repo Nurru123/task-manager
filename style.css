@@ -129,7 +129,7 @@ header {
     padding-left: 15px;
 }
 
-.sort:hover .lol {
+.sort svg:hover .lol {
     fill: black;
     transition: all .6s linear;
 }
