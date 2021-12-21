@@ -78,10 +78,15 @@ class TaskList {
 
     sortTask(sortStatus) {
         this.taskList.sort((a, b) => {
-            if (a.querySelector('input').value > b.querySelector('input').value) {
-                return (sortStatus === 'down') ? 1 : -1;
-            } else if (a.querySelector('input').value < b.querySelector('input').value) {
-                return (sortStatus === 'up') ? 1 : -1;
+            // if (a.querySelector('input').value > b.querySelector('input').value) {
+            //     return (sortStatus === 'down') ? 1 : -1;
+            // } else if (a.querySelector('input').value < b.querySelector('input').value) {
+            //     return (sortStatus === 'up') ? 1 : -1;
+            // }
+            if (sortStatus === 'down') {
+                return a.querySelector('input').value.localeCompare(b.querySelector('input').value)
+            } else {
+               return b.querySelector('input').value.localeCompare(a.querySelector('input').value)
             }
         })
         this.taskList.forEach(task => {
