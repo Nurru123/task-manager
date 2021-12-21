@@ -32,7 +32,6 @@ function init() {
             let message = document.createElement('p');
             message.classList.add('alert');
             message.innerHTML = 'сначала введите задачу';
-            document.querySelector('.add-button').style.marginTop = "6px";
             if (!document.querySelector('.alert-inner').classList.contains('have')) {
                 document.querySelector('.alert-inner').append(message);
                 document.querySelector('.alert-inner').classList.add('have');

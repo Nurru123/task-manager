@@ -110,7 +110,7 @@ header {
     align-items: center;
     justify-content: center;
     transition: all .3s linear;
-    margin-top: 18px;
+    margin-top: 6px;
 }
 
 .add-button:hover {
@@ -154,6 +154,14 @@ header {
 }
 .delete:hover rect {
     stroke: none;
+}
+
+.alert-inner{
+    height: 15px;
+    opacity: 0;
+}
+.alert-inner.have{
+    opacity: 1;
 }
 .alert {
     text-align: center;
