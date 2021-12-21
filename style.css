@@ -63,6 +63,7 @@ header {
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding-bottom: 19px;
 }
 
 .insertField {
@@ -100,7 +101,6 @@ header {
     cursor: pointer;
     width: 150px;
     height: 42px;
-    margin-bottom: 19px;
     display: flex;
     position: relative;
     background: #833AE0;
@@ -154,4 +154,9 @@ header {
 }
 .delete:hover rect {
     stroke: none;
+}
+.alert {
+    text-align: center;
+    font-size: 10px;
+    color: red;
 }

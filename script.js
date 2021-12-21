@@ -23,6 +23,20 @@ function init() {
         if (inputs[inputs.length - 1].value !== '') {
             ++counter;
             task.createNewInput();
+            if (document.querySelector('.alert-inner').classList.contains('have')) {
+                document.querySelector('.alert').remove();
+                document.querySelector('.alert-inner').classList.remove('have')
+            }
+
+        } else {
+            let message = document.createElement('p');
+            message.classList.add('alert');
+            message.innerHTML = 'сначала введите задачу';
+            document.querySelector('.add-button').style.marginTop = "6px";
+            if (!document.querySelector('.alert-inner').classList.contains('have')) {
+                document.querySelector('.alert-inner').append(message);
+                document.querySelector('.alert-inner').classList.add('have');
+            }
         }
     })
     const btnSort = document.querySelector('.sort');
@@ -62,8 +76,44 @@ class TaskList {
         deleteDiv.addEventListener('click', () => {
             this.deleteTask(div)
         })
+        div.draggable = true;
+        const eventListener = e => this.dadEventListener(e);
+        div.addEventListener('dragstart', eventListener);
+        div.addEventListener('dragend', eventListener);
+        div.addEventListener('dragenter', eventListener);
     }
 
+    dadEventListener(e) {
+        switch(e.type) {
+            case 'dragstart':
+                this.draggableTask = e.currentTarget;
+                break;
+            case 'dragenter':
+                if (e.currentTarget !== this.draggableTask &&
+                    e.currentTarget.classList.contains('insertField')
+                    ) {
+                        this.changeTask(this.draggableTask, e.currentTarget);
+                    }
+                break;
+            case 'dragend':
+                this.draggableTask = null;
+                break;
+        }
+    }
+
+    changeTask(task1, task2) {
+        const children = [...document.querySelector('.task__inner').children];
+        
+        const index1 = children.findIndex(item => item === task1);
+        const index2 = children.findIndex(item => item === task2);
+        console.log(index1, index2)
+
+        if (index1 < index2) {
+            document.querySelector('.task__inner').insertBefore(task2, task1);
+        } else {
+            document.querySelector('.task__inner').insertBefore(task1, task2);
+        }
+    }
 
     deleteTask(task) {
         if (this.taskList.length > 1) {
@@ -73,6 +123,7 @@ class TaskList {
         } else {
             const input = task.querySelector('input');
             input.value = "";
+            
         }
     }
 
